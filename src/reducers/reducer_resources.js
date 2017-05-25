@@ -10,7 +10,7 @@ export default function(state = {}, action) {
       // const resource = action.payload.data;
       // const newState = { ...state };
       // newState[post.id] = post;
-      // return newState;
+      // return newState;   equivelant to line below
       return { ...state, [action.payload.data.id]: action.payload.data };
 
     case FETCH_RESOURCES:
