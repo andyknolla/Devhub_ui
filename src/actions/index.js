@@ -5,7 +5,7 @@ export const FETCH_RESOURCE = 'fetch_resource';
 export const CREATE_RESOURCE = 'create_resource';
 export const DELETE_RESOURCE = 'delete_resource';
 
-const ROOT_URL = 'http://reduxblog.herokuapp.com/api/posts';
+const ROOT_URL = 'https://reduxblog.herokuapp.com/api/posts';
 const API_KEY = '?key=dirkadirka'
 
 export function fetchResources() {
