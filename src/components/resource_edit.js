@@ -121,5 +121,5 @@ export default reduxForm({
     validate,
     form: 'ResourceEditForm'
 })(
-    connect(mapStateToProps, { fetchResource, deleteResource })(ResourceEdit)
+    connect(mapStateToProps, { fetchResource, deleteResource, editResource })(ResourceEdit)
 );

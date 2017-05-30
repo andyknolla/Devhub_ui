@@ -24,7 +24,7 @@ class ResourceNew extends Component {
   }
 
   onSubmit(values) {
-    this.props.editResource(values, () => {
+    this.props.createResource(values, () => {
       this.props.history.goBack();
     });
   }
