@@ -22,16 +22,28 @@ class ResourcesIndex extends Component {
   }
   render() {
     return (
-      <div>
-        <div className="text-xs-right"></div>
-          <Link className="btn btn-primary" to="/resources/new">
-            Add a Resource
-          </Link>
-        <h1>Resources</h1>
-        <ul>
-          {this.renderResources()}
-        </ul>
-      </div>
+      <div className="layout-wrapper">
+       <header className="header">
+         <div>header</div>
+       </header>
+
+
+       <main className="main">
+         <h1>Resources</h1>
+         <div className="text-xs-right">
+           <Link className="btn btn-primary" to="/resources/new">
+             Add a Resource
+           </Link>
+         </div>
+         <ul>
+           {this.renderResources()}
+         </ul>
+       </main>
+       <footer className="footer">
+         <p>Copyright Andy Knolla 2017</p>
+       </footer>
+     </div>
+
     );
   }
 }

@@ -1,3 +1,26 @@
 form a {
     margin-left: 5px;
 }
+/*  Grid definition  */
+.header {
+    grid-area: hd;
+    background: gray;
+}
+.footer {
+    grid-area: ft;
+    background: gray;
+}
+.main {
+    grid-area: main;
+    background: lightblue;
+}
+
+.layout-wrapper {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+        "hd hd hd hd hd hd hd hd hd"
+        ". main main main main main main main ."
+        "ft ft ft ft ft ft ft ft ft";
+}
