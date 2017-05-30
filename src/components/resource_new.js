@@ -24,14 +24,14 @@ class ResourceNew extends Component {
   }
 
   onSubmit(values) {
-    this.props.createResource(values, () => {
-      this.props.history.push('/');
+    this.props.editResource(values, () => {
+      this.props.history.goBack();
     });
   }
 
   render() {
     const { handleSubmit } = this.props;
-
+console.log('props', this.props);
     return (
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field

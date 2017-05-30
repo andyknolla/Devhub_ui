@@ -4,6 +4,7 @@ export const FETCH_RESOURCES = 'fetch_resources';
 export const FETCH_RESOURCE = 'fetch_resource';
 export const CREATE_RESOURCE = 'create_resource';
 export const DELETE_RESOURCE = 'delete_resource';
+export const EDIT_RESOURCE = 'edit_resource';
 
 const ROOT_URL = 'https://reduxblog.herokuapp.com/api/posts';
 const API_KEY = '?key=dirkadirka'
@@ -28,6 +29,7 @@ export function createResource(values, callback) {
 }
 
 export function fetchResource(id) {
+  console.log('action id', id);
   const request = axios.get(`${ROOT_URL}/${id}${API_KEY}`)
 
   return {
@@ -39,10 +41,16 @@ export function fetchResource(id) {
 export function deleteResource(id, callback) {
   const request = axios.delete(`${ROOT_URL}/${id}${API_KEY}`)
     .then(() => callback());
-
-
   return {
     type: DELETE_RESOURCE,
+    payload: request
+  }
+}
+
+export function editResource(id) {
+  const request = axios.put(`${ROOT_URL}/${id}${API_KEY}`)
+  return {
+    type: EDIT_RESOURCE,
     payload: request
   }
 }
