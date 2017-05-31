@@ -13,10 +13,22 @@ class ResourcesIndex extends Component {
     return _.map(this.props.resources, resource => {
       return (
         <Link to={`/resource/${resource.id}`}>
-          <li className="list-group-item" key={resource.id}>
-            {resource.title}
+          <li className="single-resource-container" key={resource.id}>
+
+            <img className="img" src="http://placehold.it/90x90"></img>
+            <div className="title">
+              <h3>{resource.title}</h3>
+              <div className="category">Javascript</div>
+              <div className="rating">rating</div>
+            </div>
+              <div className="summary">
+                <p>{resource.content}</p>
+              </div>
+              <div className="comments">Comments</div>
+              <div className="tags">Categories: {resource.categories}</div>
+
           </li>
-        </Link>
+         </Link>
       )
     });
   }
@@ -24,7 +36,7 @@ class ResourcesIndex extends Component {
     return (
       <div className="layout-wrapper">
        <header className="header">
-         <div className="title">Dev Hub</div>
+         <div className="site-title">Dev Hub</div>
        </header>
        <div className="landing">
           <p>Do less Googling and more learning.  Find the best resources for web development. If it sucks, vote it down, if it rocks, vote it up.  Share your own favorites.</p>
@@ -32,11 +44,13 @@ class ResourcesIndex extends Component {
 
 
        <main className="main">
-         <h1>Resources</h1>
-         <div className="text-xs-right">
-           <Link className="add-resource" to="/resources/new">
-             Add a Resource
-           </Link>
+         <div className="top-bar">
+           <div>Filter</div>
+           <div className="add-resource">
+             <Link to="/resources/new">
+               Add a Resource
+             </Link>
+           </div>
          </div>
          <ul>
            {this.renderResources()}

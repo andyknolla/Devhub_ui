@@ -24,14 +24,15 @@ class ResourceShow extends Component {
         }
 console.log('resource', resource);
         return (
-          <div><Link to="/">Back to index</Link>
+          <div>
+            <header className="header">
+              <Link to="/">
+                <div className="site-title">Dev Hub</div>
+              </Link>
+            </header>
             <main className="single-resource-container">
               <img className="img" src="http://placehold.it/90x90"></img>
 
-
-                <Link to={`/resource/edit/${resource.id}`}>
-
-                </Link>
                 <h3 className="title">{resource.title}</h3>
                 <div className="category">Javascript</div>
                 <div className="rating">rating</div>
@@ -43,9 +44,12 @@ console.log('resource', resource);
                   >
                   Delete
                   </button>
-                  <button className="btn">
+
+                  <Link to={`/resource/edit/${resource.id}`}>
+                    <button className="btn">
                       Edit Post
-                  </button>
+                    </button>
+                  </Link>
                 </div>
                 <div className="comments">Comments</div>
                 <h6 className="tags">Categories: {resource.categories}</h6>
