@@ -18,14 +18,14 @@ class ResourcesIndex extends Component {
             <img className="img" src="http://placehold.it/90x90"></img>
             <div className="title">
               <h3>{resource.title}</h3>
-              <div className="category">Javascript</div>
+              <div className="category">{resource.categories}</div>
               <div className="rating">rating</div>
             </div>
               <div className="summary">
                 <p>{resource.content}</p>
               </div>
-              <div className="comments">Comments</div>
-              <div className="tags">Categories: {resource.categories}</div>
+              <div className="comments">Comments:</div>
+              <div className="tags">Tags:</div>
 
           </li>
          </Link>

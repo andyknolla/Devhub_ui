@@ -24,37 +24,45 @@ class ResourceShow extends Component {
         }
 console.log('resource', resource);
         return (
-          <div>
+          <div className="layout-wrapper">
             <header className="header">
               <Link to="/">
                 <div className="site-title">Dev Hub</div>
               </Link>
             </header>
-            <main className="single-resource-container">
-              <img className="img" src="http://placehold.it/90x90"></img>
-
-                <h3 className="title">{resource.title}</h3>
-                <div className="category">Javascript</div>
-                <div className="rating">rating</div>
-                <div className="summary">
-                  <p>{resource.content}</p>
-                  <button
-                      className="btn"
-                      onClick={this.onDeleteClick.bind(this)}
-                  >
-                  Delete
-                  </button>
-
-                  <Link to={`/resource/edit/${resource.id}`}>
-                    <button className="btn">
-                      Edit Post
-                    </button>
-                  </Link>
+            <main className="main">
+              <div className="single-resource-container">
+                <img className="img" src="http://placehold.it/90x90"></img>
+                <div className="title">
+                  <h3>{resource.title}</h3>
+                  <div className="category">{resource.categories}</div>
+                  <div className="rating">rating</div>
                 </div>
-                <div className="comments">Comments</div>
-                <h6 className="tags">Categories: {resource.categories}</h6>
-              </main>
-            </div>
+                  <div className="summary">
+                    <p>{resource.content}</p>
+                    <div className="card-buttons">
+                      <button
+                          className="btn"
+                          onClick={this.onDeleteClick.bind(this)}
+                      >
+                      Delete
+                      </button>
+
+                      <Link to={`/resource/edit/${resource.id}`}className="padding-left-5">
+                        <button className="btn">
+                          Edit Post
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="comments">Comments:</div>
+                  <h6 className="tags">Tags:</h6>
+                </div>
+            </main>
+            <footer className="footer">
+              <p>Copyright Andy Knolla 2017</p>
+            </footer>
+          </div>
         );
     }
 }

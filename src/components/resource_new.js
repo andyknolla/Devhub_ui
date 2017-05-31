@@ -12,12 +12,35 @@ class ResourceNew extends Component {
 
     return(
       <div className={className}>
-        <label>{field.label}</label>
-        <input
-          className="form-control"
-          type="text"
-          {...field.input}
-        />
+        <label>
+
+          <span>{field.label} <span className="required">*</span></span>
+
+          <input
+            type="text"
+            className="input-field"
+            {...field.input}
+          />
+        </label>
+        {touched ? error : ""}
+      </div>
+    );
+  }
+  renderTextField(field) {
+    const { meta: { touched, error } } = field; // destructures meta from field, then touched and error properties from meta
+    const className=`${touched && error ? 'has-danger' : ''}`;
+
+    return(
+      <div className={className}>
+        <label>
+
+          <span>{field.label} <span className="required">*</span></span>
+
+          <textarea
+            className="textarea-field"
+            {...field.input}
+          />
+        </label>
         {touched ? error : ""}
       </div>
     );
@@ -33,25 +56,40 @@ class ResourceNew extends Component {
     const { handleSubmit } = this.props;
 console.log('props', this.props);
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <Field
-          label="Title"
-          name="title"
-          component={this.renderField}
-        />
-        <Field
-          label="Categories"
-          name="categories"
-          component={this.renderField}
-        />
-        <Field
-          label="Post Content"
-          name="content"
-          component={this.renderField}
-        />
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <Link to="/" className="btn btn-danger">Cancel</Link>
-      </form>
+      <div className="layout-wrapper">
+        <header className="header">
+          <Link to="/">
+            <div className="site-title">Dev Hub</div>
+          </Link>
+        </header>
+        <div className="main">
+          <div className="form-style">
+            <div className="form-style-heading">Enter Resource Information</div>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+              <Field
+                label="Title"
+                name="title"
+                component={this.renderField}
+              />
+              <Field
+                label="Categories"
+                name="categories"
+                component={this.renderField}
+              />
+              <Field
+                label="Post Content"
+                name="content"
+                component={this.renderTextField}
+              />
+              <button type="submit" className="btn">Submit</button>
+              <Link to="/" className="padding-left-5"><button className="btn">Cancel</button></Link>
+            </form>
+          </div>
+        </div>
+        <footer className="footer">
+          <p>Copyright Andy Knolla 2017</p>
+        </footer>
+      </div>
     )
   }
 }

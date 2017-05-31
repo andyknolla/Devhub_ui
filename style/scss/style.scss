@@ -18,15 +18,16 @@ rgb(255,192,191)
     display: grid;
     grid-template:
         "hd hd hd hd hd hd hd hd hd" minmax(80px, auto)
-        "land land land land land land land land land" minmax(300px, auto)
+        "land land land land land land land land land" minmax(auto, auto)
         "main main main main main main main main main" minmax(70vh, auto)
         "ft ft ft ft ft ft ft ft ft" minmax(60px, auto)
           / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+          background: rgb(237,237,237);
 }
 
 /*  Styles  */
 body {
-  color: darkSlateGray;
+  color: rgb(32,54,72);
   font-family: 'Average Sans', sans-serif;
 }
 h1 {
@@ -55,14 +56,17 @@ h6 {
 }
 a {
   text-decoration: none;
-  color: darkSlateGray;
+  color: rgb(32,54,72);
+}
+.padding-left-5 {
+  padding-left: 5px;
 }
 .site-title {
   font-size: 24px;
 }
 .header {
     grid-area: hd;
-    background: rgb(54,53,42);
+    background: rgb(61,38,33);
     color: indianred;
     padding: 15px;
   a {
@@ -71,8 +75,8 @@ a {
 }
 .footer {
     grid-area: ft;
-    background: rgb(54,53,42);;
-    color: rgb(201,234,255);
+    background: rgb(61,38,33);
+    color: indianred;
     padding: 15px;
 }
 .landing {
@@ -83,28 +87,28 @@ a {
     linear-gradient(
       to top,
       rgb(237,237,237),
-      rgb(121,139,167)35%
+      rgb(226,217,207)35%
     );
-  color: rgb(235,235,235);
+  color: rgb(61,38,33);
   padding: 110px;
   font-size: 25px;
-  text-align: center;
   p {
     align-self:center;
+    max-width: 500px;
+    text-align: center;
+    margin:auto;
   }
 }
 .main {
     grid-area: main;
     background: rgb(237,237,237);
-
     padding: 25px;
+    margin: 0 auto;
 }
 .top-bar {
   display: flex;
   justify-content: space-between;
-}
-form a {
-    margin-left: 5px;
+  max-width: 732px;
 }
 //  Index page
 .list-group-item {
@@ -124,12 +128,11 @@ form a {
   text-transform: uppercase;
   font-size: 16px;
   background: gray;
-  border: 1px solid rgb(121,139,167);
   box-shadow: 3px 3px 10px gray;
   border-radius: 5px;
   background-image: radial-gradient(
     ellipse,
-    rgb(149,172,206),
+    rgb(226,217,207),
     rgb(237,237,237) 100%
   );
   padding: 10px 17px 15px;
@@ -152,12 +155,13 @@ form a {
   grid-template:
       "img title title title title title title title title" minmax(90px, auto)
       "sum sum sum sum sum sum sum sum sum" minmax(70px, auto)
-      "com com com com com tag tag tag tag " minmax(30px, auto)
+      "com com com com com tag tag tag tag " minmax(40px, auto)
         / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  background: rgb(186,132,72);
   margin-top:10px;
-  margin-bottom:10px;
+  margin-bottom:15px;
+  max-width: 700px;
   padding: 15px;
-  border: 1px solid gray;
   border-radius: 3px;
   box-shadow: 3px 3px 10px darkgray;
 }
@@ -168,7 +172,8 @@ form a {
   grid-area: title;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  align-items: center;
+  padding-left: 15px;
 }
 .category {
   grid-area: cat;
@@ -182,19 +187,110 @@ form a {
 }
 .comments {
   grid-area: com;
+  margin-top: 5px;
 }
 .tags {
   grid-area: tag;
+  margin-top: 5px;
 }
 .btn {
   height: 35px;
   width: 8em;
-  color: rgb(127,25,24);
+  color: indianred;
   text-transform: uppercase;
   font-size: 13px;
+  font-weight: bold;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 3px;
-  background: rgba(201,234,255, 0.75);
-  border: 1px solid rgb(88, 103, 113);
+  background: rgb(61,38,33);
+  border: none;
+  box-shadow: 3px 3px 10px rgb(50,50,50);
 }
+.card-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top:10px;
+}
+//    /*****   General Form styles  *****/
+
+.form-style{
+    max-width: 500px;
+    padding: 20px 12px 10px 20px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+.form-style-heading{
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding-bottom: 3px;
+}
+.form-style label{
+    display: block;
+    margin: 0px 0px 15px 0px;
+}
+.form-style label > span{
+    width: 100px;
+    font-weight: bold;
+    float: left;
+    padding-top: 8px;
+    padding-right: 5px;
+}
+.form-style span.required{
+    color:red;
+}
+.form-style input.input-field{
+    width: 48%;
+
+}
+.form-style input.input-field,
+.form-style .textarea-field,
+ .form-style .select-field{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 1px 1px 4px #EBEBEB;
+    -moz-box-shadow: 1px 1px 4px #EBEBEB;
+    -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 7px;
+    outline: none;
+}
+.form-style .input-field:focus,
+.form-style .textarea-field:focus,
+.form-style .select-field:focus{
+    border: 1px solid #0C0;
+}
+.form-style .textarea-field{
+    height:100px;
+    width: 55%;
+}
+.form-style input[type=submit],
+.form-style input[type=button]{
+    border: none;
+    padding: 8px 15px 8px 15px;
+    background: #FF8500;
+    color: #fff;
+    box-shadow: 1px 1px 4px #DADADA;
+    -moz-box-shadow: 1px 1px 4px #DADADA;
+    -webkit-box-shadow: 1px 1px 4px #DADADA;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+.form-style input[type=submit]:hover,
+.form-style input[type=button]:hover{
+    background: #EA7B00;
+    color: #fff;
+}
+
+
+
+
+
+//    /*****   Create-New Form styles  *****/
