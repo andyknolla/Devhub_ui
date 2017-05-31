@@ -24,22 +24,32 @@ class ResourceShow extends Component {
         }
 console.log('resource', resource);
         return (
-            <div>
-                <Link to="/">Back to index</Link>
-                <button
-                    className="btn btn-danger pull-xs-right"
-                    onClick={this.onDeleteClick.bind(this)}
-                >
-                Delete Post
-                </button>
+          <div><Link to="/">Back to index</Link>
+            <main className="single-resource-container">
+              <img className="img" src="http://placehold.it/90x90"></img>
+
+
                 <Link to={`/resource/edit/${resource.id}`}>
-                    <button className="btn pull-xs-right">
-                        Edit Post
-                    </button>
+
                 </Link>
-                <h3>{resource.title}</h3>
-                <h6>Categories: {resource.categories}</h6>
-                <p>{resource.content}</p>
+                <h3 className="title">{resource.title}</h3>
+                <div className="category">Javascript</div>
+                <div className="rating">rating</div>
+                <div className="summary">
+                  <p>{resource.content}</p>
+                  <button
+                      className="btn"
+                      onClick={this.onDeleteClick.bind(this)}
+                  >
+                  Delete
+                  </button>
+                  <button className="btn">
+                      Edit Post
+                  </button>
+                </div>
+                <div className="comments">Comments</div>
+                <h6 className="tags">Categories: {resource.categories}</h6>
+              </main>
             </div>
         );
     }

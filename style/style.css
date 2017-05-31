@@ -1,9 +1,14 @@
 /*   Colors    */
-/* green   rgb(178,177,70)
-dark green rgb(54,53,42)
-lightblue  rgb(201,234,255)
-deep red   rgb(127,25,24)
-rose       rgb(255,192,191)
+/* green
+rgb(178,177,70)
+  dark green
+rgb(54,53,42)
+  lightblue
+rgb(201,234,255)
+  deep red
+rgb(127,25,24)
+  rose
+rgb(255,192,191)
 
 */
 /*  Grid definition  */
@@ -61,7 +66,7 @@ a {
 .landing {
   grid-area: land;
   display: grid;
-  padding: 120px;
+  padding: 110px;
   font-size: 25px;
   text-align: center; }
   .landing p {
@@ -95,5 +100,59 @@ form a {
     color: #36352a; }
   .add-resource:visited {
     color: #36352a; }
+
+.single-resource-container {
+  display: grid;
+  grid-template: "img title title title cat cat cat rat rat" minmax(60px, auto) "sum sum sum sum sum sum sum sum sum" minmax(70px, auto) "com com com com com tag tag tag tag " minmax(60px, auto)/1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #b2b146;
+  box-shadow: 0 0 10px darkgray; }
+
+.img {
+  grid-area: img;
+  background: gray; }
+
+.title {
+  grid-area: title;
+  background: indianred;
+  padding: 15px; }
+
+.category {
+  grid-area: cat;
+  background: azure;
+  padding: 15px; }
+
+.rating {
+  grid-area: rat;
+  background: olive;
+  padding: 15px; }
+
+.summary {
+  grid-area: sum;
+  background: sienna;
+  padding: 15px; }
+
+.comments {
+  grid-area: com;
+  background: lightgray;
+  padding: 10px; }
+
+.tags {
+  grid-area: tag;
+  background: goldenrod;
+  padding: 15px; }
+
+.btn {
+  height: 35px;
+  width: 8em;
+  color: #7f1918;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 3px;
+  background: rgba(201, 234, 255, 0.75);
+  border: 1px solid #586771; }
 
 /*# sourceMappingURL=style.css.map */

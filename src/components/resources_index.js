@@ -27,7 +27,7 @@ class ResourcesIndex extends Component {
          <div className="title">Dev Hub</div>
        </header>
        <div className="landing">
-          <p>Do less Googling and more learning.  Find the best resources for web development. If it sucks, vote it down, if it rocks, vote it up.  Share your own favorites</p>
+          <p>Do less Googling and more learning.  Find the best resources for web development. If it sucks, vote it down, if it rocks, vote it up.  Share your own favorites.</p>
        </div>
 
 
