@@ -154,6 +154,7 @@ a {
   display: grid;
   grid-template:
       "img title title title title title title title title" minmax(90px, auto)
+      "imb sub sub sub sub sub sub sub sub" minmax(40px, auto)
       "sum sum sum sum sum sum sum sum sum" minmax(70px, auto)
       "com com com com com tag tag tag tag " minmax(40px, auto)
         / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -170,10 +171,16 @@ a {
 }
 .title {
   grid-area: title;
+  padding-left: 15px;
+}
+.title-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 15px;
+}
+.sub-title {
+  grid-area: sub;
+  margin-top: 10px;
 }
 .category {
   grid-area: cat;
