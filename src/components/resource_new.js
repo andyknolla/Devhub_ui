@@ -26,6 +26,21 @@ class ResourceNew extends Component {
       </div>
     );
   }
+  renderRadioField(field) {
+
+    return(
+      <div>
+        <label>
+          <span>{field.label} <span className="required">*</span></span>
+
+          <input
+            type="checkbox"
+            {...field.input}
+          />
+        </label>
+      </div>
+    );
+  }
   renderTextField(field) {
     const { meta: { touched, error } } = field; // destructures meta from field, then touched and error properties from meta
     const className=`${touched && error ? 'has-danger' : ''}`;
@@ -47,6 +62,7 @@ class ResourceNew extends Component {
   }
 
   onSubmit(values) {
+    console.log('values ', values)
     this.props.createResource(values, () => {
       this.props.history.goBack();
     });
@@ -72,13 +88,28 @@ console.log('props', this.props);
                 component={this.renderField}
               />
               <Field
-                label="Categories"
-                name="categories"
+                label="Category"
+                name="category_id"
                 component={this.renderField}
               />
               <Field
-                label="Post Content"
-                name="content"
+                label="Url"
+                name="url"
+                component={this.renderField}
+              />
+              <Field
+                label="Free?"
+                name="free"
+                component={this.renderRadioField}
+              />
+              <Field
+                label="Resource Type"
+                name="resource_type_id"
+                component={this.renderField}
+              />
+              <Field
+                label="Description"
+                name="description"
                 component={this.renderTextField}
               />
               <button type="submit" className="btn">Submit</button>

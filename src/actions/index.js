@@ -6,11 +6,11 @@ export const CREATE_RESOURCE = 'create_resource';
 export const DELETE_RESOURCE = 'delete_resource';
 export const EDIT_RESOURCE = 'edit_resource';
 
-const ROOT_URL = 'https://reduxblog.herokuapp.com/api/posts';
+const ROOT_URL = 'https://devhub-api.herokuapp.com';
 const API_KEY = '?key=dirkadirka'
 
 export function fetchResources() {
-  const request = axios.get(`${ROOT_URL}/${API_KEY}`);
+  const request = axios.get(`${ROOT_URL}/resources`);
 
   return {
     type: FETCH_RESOURCES,
@@ -19,7 +19,7 @@ export function fetchResources() {
 }
 
 export function createResource(values, callback) {
-  const request = axios.post(`${ROOT_URL}/${API_KEY}`, values)
+  const request = axios.post(`${ROOT_URL}/resources`, values)
   .then(() => callback());
 
   return {
@@ -30,7 +30,7 @@ export function createResource(values, callback) {
 
 export function fetchResource(id) {
   console.log('action id', id);
-  const request = axios.get(`${ROOT_URL}/${id}${API_KEY}`)
+  const request = axios.get(`${ROOT_URL}/resources/${id}`)
 
   return {
     type: FETCH_RESOURCE,
@@ -39,7 +39,7 @@ export function fetchResource(id) {
 }
 
 export function deleteResource(id, callback) {
-  const request = axios.delete(`${ROOT_URL}/${id}${API_KEY}`)
+  const request = axios.delete(`${ROOT_URL}/resources${id}`)
     .then(() => callback());
   return {
     type: DELETE_RESOURCE,
@@ -48,7 +48,7 @@ export function deleteResource(id, callback) {
 }
 
 export function editResource(id) {
-  const request = axios.put(`${ROOT_URL}/${id}${API_KEY}`)
+  const request = axios.put(`${ROOT_URL}/resources${id}`)
   return {
     type: EDIT_RESOURCE,
     payload: request
