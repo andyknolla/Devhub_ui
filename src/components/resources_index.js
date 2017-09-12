@@ -19,13 +19,13 @@ class ResourcesIndex extends Component {
             <div className="title">
               <div className="title-row">
                 <h3>{resource.title}</h3>
-                <div className="category">Category_id: {resource.category_id}</div>
-                <div className="resource_type">Resource_id: {resource.resource_type_id}</div>
-                <div className="rating">rating</div>
+                <div className="category">{resource.category_name}</div>
+                <div className="resource_type">{resource.type_name}</div>
+                <div className="rating">Rating: {resource.rating}</div>
               </div>
               <div className="sub-title">
                 <span className="url">{resource.url}</span>
-                <span className="padding-left-5">Free? {resource.free}</span>
+                <span className="padding-left-5">{resource.free ? 'Free' : '$'}</span>
               </div>
             </div>
             <div className="summary">
@@ -40,14 +40,15 @@ class ResourcesIndex extends Component {
     });
   }
   render() {
+    console.log('render', this.props.resources)
     return (
       <div className="layout-wrapper">
        <header className="header">
          <div className="site-title">Dev Hub</div>
        </header>
-       <div className="landing">
+       {/* <div className="landing">
           <p>Do less Googling and more learning.  Find the best resources for web development. If it sucks, vote it down, if it rocks, vote it up.  Share your own favorites.</p>
-       </div>
+       </div> */}
 
 
        <main className="main">

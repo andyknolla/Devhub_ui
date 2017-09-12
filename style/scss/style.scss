@@ -22,7 +22,7 @@ rgb(255,192,191)
         "main main main main main main main main main" minmax(70vh, auto)
         "ft ft ft ft ft ft ft ft ft" minmax(60px, auto)
           / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-          background: rgb(237,237,237);
+          background: rgb(255,255,255);
 }
 
 /*  Styles  */
@@ -101,7 +101,7 @@ a {
 }
 .main {
     grid-area: main;
-    background: rgb(237,237,237);
+    background: rgb(255,255,255);
     padding: 25px;
     margin: 0 auto;
 }
@@ -158,7 +158,7 @@ a {
       "sum sum sum sum sum sum sum sum sum" minmax(70px, auto)
       "com com com com com tag tag tag tag " minmax(40px, auto)
         / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  background: rgb(186,132,72);
+  background: rgb(255,255,255);
   margin-top:10px;
   margin-bottom:15px;
   max-width: 700px;

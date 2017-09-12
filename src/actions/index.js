@@ -7,6 +7,7 @@ export const DELETE_RESOURCE = 'delete_resource';
 export const EDIT_RESOURCE = 'edit_resource';
 
 const ROOT_URL = 'https://devhub-api.herokuapp.com';
+const LOCAL_ROOT_URL = 'http://localhost:3000';
 const API_KEY = '?key=dirkadirka'
 
 export function fetchResources() {

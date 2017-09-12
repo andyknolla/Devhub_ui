@@ -15,7 +15,7 @@ rgb(255,192,191)
 .layout-wrapper {
   display: grid;
   grid-template: "hd hd hd hd hd hd hd hd hd" minmax(80px, auto) "land land land land land land land land land" minmax(auto, auto) "main main main main main main main main main" minmax(70vh, auto) "ft ft ft ft ft ft ft ft ft" minmax(60px, auto)/1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  background: #ededed; }
+  background: white; }
 
 /*  Styles  */
 body {
@@ -86,7 +86,7 @@ a {
 
 .main {
   grid-area: main;
-  background: #ededed;
+  background: white;
   padding: 25px;
   margin: 0 auto; }
 
@@ -128,7 +128,7 @@ a {
 .single-resource-container {
   display: grid;
   grid-template: "img title title title title title title title title" minmax(90px, auto) "imb sub sub sub sub sub sub sub sub" minmax(40px, auto) "sum sum sum sum sum sum sum sum sum" minmax(70px, auto) "com com com com com tag tag tag tag " minmax(40px, auto)/1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  background: #ba8448;
+  background: white;
   margin-top: 10px;
   margin-bottom: 15px;
   max-width: 700px;

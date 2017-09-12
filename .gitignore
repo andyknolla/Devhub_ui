@@ -2,6 +2,8 @@
 npm-debug.log
 .DS_Store
 extra.html
+style.css.map
+/style/.sass-cache
 
 # IntelliJ
 *.iml

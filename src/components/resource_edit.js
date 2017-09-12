@@ -36,7 +36,7 @@ class ResourceEdit extends Component {
         };
         this.props.initialize(initData);
     }
-    
+
 
     onDeleteClick() {
         const { id } = this.props.match.params; // provided by React-router
@@ -53,7 +53,6 @@ class ResourceEdit extends Component {
 
     render() {
         const { resource, handleSubmit } = this.props;
-console.log('edit page props ', this.props);
         if(!resource) {
             return <div>loading...</div>;
         }
