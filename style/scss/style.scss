@@ -22,7 +22,7 @@ rgb(255,192,191)
         "main main main main main main main main main" minmax(70vh, auto)
         "ft ft ft ft ft ft ft ft ft" minmax(60px, auto)
           / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-          background: rgb(255,255,255);
+          background: rgb(250,250,250);
 }
 
 /*  Styles  */
@@ -62,21 +62,21 @@ a {
   padding-left: 5px;
 }
 .site-title {
-  font-size: 24px;
+  font-size: 3.5rem;
 }
 .header {
     grid-area: hd;
-    background: rgb(61,38,33);
-    color: indianred;
+    background: rgb(19, 54, 108);
+    color: rgb(250,250,250);
     padding: 15px;
   a {
-    color: indianred;
+    color: rgb(250,250,250);
   }
 }
 .footer {
     grid-area: ft;
-    background: rgb(61,38,33);
-    color: indianred;
+    background: rgb(19, 54, 108);
+    color: rgb(250,250,250);
     padding: 15px;
 }
 .landing {
@@ -101,7 +101,7 @@ a {
 }
 .main {
     grid-area: main;
-    background: rgb(255,255,255);
+    background: rgb(250,250,250);
     padding: 25px;
     margin: 0 auto;
 }
@@ -203,16 +203,14 @@ a {
 .btn {
   height: 35px;
   width: 8em;
-  color: indianred;
+  color: rgb(246, 116, 4);
   text-transform: uppercase;
   font-size: 13px;
   font-weight: bold;
   padding-left: 15px;
   padding-right: 15px;
-  border-radius: 3px;
-  background: rgb(61,38,33);
+  background: rgb(255,255,255);
   border: none;
-  box-shadow: 3px 3px 10px rgb(50,50,50);
 }
 .card-buttons {
   display: flex;

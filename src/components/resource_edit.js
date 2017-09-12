@@ -23,7 +23,6 @@ class ResourceEdit extends Component {
     }
 
     renderRadioField(field) {
-
       return(
         <div>
           <label>
@@ -38,9 +37,8 @@ class ResourceEdit extends Component {
       );
     }
     renderTextField(field) {
-      const { meta: { touched, error } } = field; // destructures meta from field, then touched and error properties from meta
+      const { meta: { touched, error } } = field;
       const className=`${touched && error ? 'has-danger' : ''}`;
-
       return(
         <div className={className}>
           <label>
@@ -60,7 +58,6 @@ class ResourceEdit extends Component {
     componentDidMount() {
        const { id } = this.props.match.params; // provided by React-router
         this.props.fetchResource(id);
-
     }
 
     handleInitialize() {
@@ -71,7 +68,6 @@ class ResourceEdit extends Component {
         };
         this.props.initialize(initData);
     }
-
 
     onDeleteClick() {
         const { id } = this.props.match.params; // provided by React-router

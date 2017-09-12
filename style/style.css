@@ -15,7 +15,7 @@ rgb(255,192,191)
 .layout-wrapper {
   display: grid;
   grid-template: "hd hd hd hd hd hd hd hd hd" minmax(80px, auto) "land land land land land land land land land" minmax(auto, auto) "main main main main main main main main main" minmax(70vh, auto) "ft ft ft ft ft ft ft ft ft" minmax(60px, auto)/1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  background: white; }
+  background: #fafafa; }
 
 /*  Styles  */
 body {
@@ -54,20 +54,20 @@ a {
   padding-left: 5px; }
 
 .site-title {
-  font-size: 24px; }
+  font-size: 3.5rem; }
 
 .header {
   grid-area: hd;
-  background: #3d2621;
-  color: indianred;
+  background: #13366c;
+  color: #fafafa;
   padding: 15px; }
   .header a {
-    color: indianred; }
+    color: #fafafa; }
 
 .footer {
   grid-area: ft;
-  background: #3d2621;
-  color: indianred;
+  background: #13366c;
+  color: #fafafa;
   padding: 15px; }
 
 .landing {
@@ -86,7 +86,7 @@ a {
 
 .main {
   grid-area: main;
-  background: white;
+  background: #fafafa;
   padding: 25px;
   margin: 0 auto; }
 
@@ -173,16 +173,14 @@ a {
 .btn {
   height: 35px;
   width: 8em;
-  color: indianred;
+  color: #f67404;
   text-transform: uppercase;
   font-size: 13px;
   font-weight: bold;
   padding-left: 15px;
   padding-right: 15px;
-  border-radius: 3px;
-  background: #3d2621;
-  border: none;
-  box-shadow: 3px 3px 10px #323232; }
+  background: white;
+  border: none; }
 
 .card-buttons {
   display: flex;
