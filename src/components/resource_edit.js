@@ -22,6 +22,41 @@ class ResourceEdit extends Component {
         );
     }
 
+    renderRadioField(field) {
+
+      return(
+        <div>
+          <label>
+            <span>{field.label} <span className="required">*</span></span>
+
+            <input
+              type="checkbox"
+              {...field.input}
+            />
+          </label>
+        </div>
+      );
+    }
+    renderTextField(field) {
+      const { meta: { touched, error } } = field; // destructures meta from field, then touched and error properties from meta
+      const className=`${touched && error ? 'has-danger' : ''}`;
+
+      return(
+        <div className={className}>
+          <label>
+
+            <span>{field.label} <span className="required">*</span></span>
+
+            <textarea
+              className="textarea-field"
+              {...field.input}
+            />
+          </label>
+          {touched ? error : ""}
+        </div>
+      );
+    }
+
     componentDidMount() {
        const { id } = this.props.match.params; // provided by React-router
         this.props.fetchResource(id);
@@ -46,7 +81,10 @@ class ResourceEdit extends Component {
     }
 
     onSubmit(values) {
-      this.props.editResource(values, () => {
+      const { id } = this.props.match.params; // provided by React-router
+
+      console.log('on submit');
+      this.props.editResource(id, values, () => {
         this.props.history.goBack();
       });
     }
@@ -68,7 +106,7 @@ class ResourceEdit extends Component {
                 </button>
                 <div>Edit</div>
                 <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                  <Field
+                  {/* <Field
                     label="Title"
                     name="title"
                     component={this.renderField}
@@ -82,6 +120,38 @@ class ResourceEdit extends Component {
                     label="Post Content"
                     name="content"
                     component={this.renderField}
+                  /> */}
+
+
+                  <Field
+                    label="Title"
+                    name="title"
+                    component={this.renderField}
+                  />
+                  <Field
+                    label="Category"
+                    name="category_id"
+                    component={this.renderField}
+                  />
+                  <Field
+                    label="Url"
+                    name="url"
+                    component={this.renderField}
+                  />
+                  <Field
+                    label="Free?"
+                    name="free"
+                    component={this.renderRadioField}
+                  />
+                  <Field
+                    label="Resource Type"
+                    name="resource_type_id"
+                    component={this.renderField}
+                  />
+                  <Field
+                    label="Description"
+                    name="description"
+                    component={this.renderTextField}
                   />
                   <button type="submit" className="btn btn-primary">Submit</button>
                   <Link to="/" className="btn btn-danger">Cancel</Link>

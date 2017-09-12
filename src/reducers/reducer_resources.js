@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { FETCH_RESOURCES, FETCH_RESOURCE, DELETE_RESOURCE } from '../actions';
+import { FETCH_RESOURCES, FETCH_RESOURCE, DELETE_RESOURCE, EDIT_RESOURCE } from '../actions';
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -15,7 +15,7 @@ export default function(state = {}, action) {
 
     case FETCH_RESOURCES:
       return _.mapKeys(action.payload.data, 'id');
-    
+
     default:
       return state;
   }

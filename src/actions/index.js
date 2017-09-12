@@ -40,7 +40,7 @@ export function fetchResource(id) {
 }
 
 export function deleteResource(id, callback) {
-  const request = axios.delete(`${ROOT_URL}/resources${id}`)
+  const request = axios.delete(`${ROOT_URL}/resources/${id}`)
     .then(() => callback());
   return {
     type: DELETE_RESOURCE,
@@ -48,8 +48,11 @@ export function deleteResource(id, callback) {
   }
 }
 
-export function editResource(id) {
-  const request = axios.put(`${ROOT_URL}/resources${id}`)
+export function editResource(id, values, callback) {
+  console.log('values', values);
+  const request = axios.put(`${ROOT_URL}/resources/${id}`, values)
+  .then(() => callback());
+
   return {
     type: EDIT_RESOURCE,
     payload: request
