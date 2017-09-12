@@ -46,9 +46,9 @@ class ResourcesIndex extends Component {
        <header className="header">
          <div className="site-title">Dev Hub</div>
        </header>
-       {/* <div className="landing">
-          <p>Do less Googling and more learning.  Find the best resources for web development. If it sucks, vote it down, if it rocks, vote it up.  Share your own favorites.</p>
-       </div> */}
+       <div className="landing">
+          <p>Less Googling, more learning. Find the best resources for web development.</p>
+       </div>
 
 
        <main className="main">

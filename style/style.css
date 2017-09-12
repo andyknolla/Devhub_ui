@@ -73,8 +73,6 @@ a {
 .landing {
   grid-area: land;
   display: grid;
-  background: #798ba7;
-  background-image: linear-gradient(to top, #ededed, #e2d9cf 35%);
   color: #3d2621;
   padding: 110px;
   font-size: 25px; }

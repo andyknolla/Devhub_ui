@@ -82,13 +82,12 @@ a {
 .landing {
   grid-area:land;
   display: grid;
-  background: rgb(121,139,167);
-  background-image:
-    linear-gradient(
-      to top,
-      rgb(237,237,237),
-      rgb(226,217,207)35%
-    );
+  // background-image:
+  //   linear-gradient(
+  //     to top,
+  //     rgb(237,237,237),
+  //     rgb(226,217,207)35%
+  //   );
   color: rgb(61,38,33);
   padding: 110px;
   font-size: 25px;
